@@ -98,7 +98,7 @@ final class FunctionalFlavour implements Flavour, MessageFactoryAware
         }
 
         if($customCommand !== $modifiedCmd) {
-            return $this->port->decorateCommand($modifiedCmd);
+            return $this->port->decorateCommand($modifiedCmd)->withMetadata($command->metadata());
         }
 
         return $command;
